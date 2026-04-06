@@ -1,21 +1,33 @@
 public class Main {
     public static void main(String[] args) {
-        BankAccount account1 = new BankAccount(7.0, "Sawera Ghaffar");
-        BankAccount account2 = new BankAccount(1000.0, "Sana Ghaffar");
+        System.out.println("===== LIBRARY BOOK MANAGEMENT SYSTEM =====\n");
 
-        account1.deposit(1000.0);
-        account1.withdraw(500.0);
-        account2.deposit(700.0);
-        account2.withdraw(200.0);
+        // Creating book objects using constructor overloading
+        Book book1 = new Book("Math", "SaweraGhaffar");
+        Book book2 = new Book("Urdu", "SanaGhaffar", true);
+        Book book3 = new Book(); // Using default constructor
+        book3.setTitle("2002");
+        book3.setAuthor("HussnainGhaffar");
 
-        account1.displayAccountInfo();
-        account2.displayAccountInfo();
+        // Display initial book details
+        book1.displayDetails();
+        book2.displayDetails();
+        book3.displayDetails();
+        // Borrowing books
+        book1.borrowBook();
+        book2.borrowBook();
+        book2.borrowBook(); // Trying to borrow already borrowed book
+        book1.returnBook();
+        book3.returnBook(); // Book not borrowed
 
-        System.out.println(
-                "Final Details of Account 1:" + account1.getAccountHolderName() + " - Balance: "
-                        + account1.getBalance());
-        System.out.println(
-                "Final Details of Account 2:" + account2.getAccountHolderName() + " - Balance: "
-                        + account2.getBalance());
+        // Display final details
+        book1.displayDetails();
+        book2.displayDetails();
+        book3.displayDetails();
+
+        // Additional operations
+        System.out.println("Is '" + book1.getTitle() + "' available? " + (book1.isAvailable() ? "Yes" : "No"));
+        System.out.println("Is '" + book2.getTitle() + "' available? " + (book2.isAvailable() ? "Yes" : "No"));
+
     }
 }
