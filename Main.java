@@ -3,7 +3,7 @@ public class Main {
         System.out.println("===== LIBRARY BOOK MANAGEMENT SYSTEM =====\n");
 
         // Creating book objects using constructor overloading
-        Book book1 = new Book("Math", "SaweraGhaffar");
+        Book book1 = new Book("Math", "AhmedGhaffar");
         Book book2 = new Book("Urdu", "SanaGhaffar", true);
         Book book3 = new Book(); // Using default constructor
         book3.setTitle("2002");
